@@ -97,7 +97,7 @@ jobs:
         run: |
          kubectl delete secret regcred --ignore-not-found
          kubectl create secret docker-registry regcred \
-          --docker-server=${{ secrets.REGISTRY }} \
+         s --docker-server=${{ secrets.REGISTRY }} \
           --docker-username=AWS \
           --docker-password=$(aws ecr get-login-password --region ${{ env.AWS_REGION }})
 
